@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTCTX - Free Bitcoin Portfolio Tracker & Tax Report Generator</title>
+    <meta name="description" content="Free, open-source Bitcoin portfolio tracker and IRS-compliant tax report generator. Your data stays on your machine.">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="64x64" href="icon-64.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'btc-orange': '#F7931A',
+                        'btc-dark': '#0D1117',
+                        'btc-gray': '#161B22',
+                        'btc-border': '#30363D',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-btc-dark text-gray-100">
+
+    <!-- Header -->
+    <header class="border-b border-btc-border">
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="icon-64.png" alt="BTCTX Logo" class="w-10 h-10 rounded-full">
+                <span class="text-xl font-semibold">BTCTX</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="https://github.com/PlebRick/BTCTX" target="_blank" class="text-gray-400 hover:text-white transition">GitHub</a>
+                <a href="#donate" class="bg-btc-orange text-black px-4 py-2 rounded-lg font-medium hover:bg-orange-500 transition">Donate</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-6 py-16 text-center">
+        <!-- Large Centered Logo -->
+        <img src="icon-256.png" alt="BTCTX Logo" class="w-40 h-40 mx-auto mb-8">
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            Your Bitcoin. Your Data.<br>
+            <span class="text-btc-orange">Your Taxes. Done.</span>
+        </h1>
+        <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+            Free, open-source Bitcoin portfolio tracker and IRS-compliant tax report generator.
+            Runs locally on your machine — your financial data never leaves your computer.
+        </p>
+        <!-- Download Options -->
+        <div class="mb-6">
+            <p class="text-gray-400 mb-4">Choose your platform:</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                <!-- Docker -->
+                <a href="https://github.com/PlebRick/BTCTX/releases" target="_blank" class="bg-btc-gray border border-btc-border rounded-xl p-4 hover:border-btc-orange transition group">
+                    <div class="text-3xl mb-2">🐳</div>
+                    <div class="font-semibold group-hover:text-btc-orange">Docker</div>
+                    <div class="text-xs text-gray-500">GitHub Releases</div>
+                </a>
+                <!-- StartOS -->
+                <a href="https://github.com/PlebRick/BTCTX-StartOS/releases" target="_blank" class="bg-btc-gray border border-btc-border rounded-xl p-4 hover:border-btc-orange transition group">
+                    <div class="text-3xl mb-2">🏠</div>
+                    <div class="font-semibold group-hover:text-btc-orange">StartOS</div>
+                    <div class="text-xs text-gray-500">.s9pk Package</div>
+                </a>
+                <!-- Mac -->
+                <div class="bg-btc-gray border border-btc-border rounded-xl p-4 opacity-50 cursor-not-allowed">
+                    <div class="text-3xl mb-2">🍎</div>
+                    <div class="font-semibold">Mac App</div>
+                    <div class="text-xs text-gray-500">Coming Soon</div>
+                </div>
+                <!-- Windows -->
+                <div class="bg-btc-gray border border-btc-border rounded-xl p-4 opacity-50 cursor-not-allowed">
+                    <div class="text-3xl mb-2">🪟</div>
+                    <div class="font-semibold">Windows</div>
+                    <div class="text-xs text-gray-500">Coming Soon</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Source Code Link -->
+        <a href="https://github.com/PlebRick/BTCTX" target="_blank" class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition">
+            <span>View Source on GitHub</span>
+            <span>→</span>
+        </a>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-btc-gray border-y border-btc-border">
+        <div class="max-w-6xl mx-auto px-6 py-20">
+            <h2 class="text-3xl font-bold text-center mb-12">Why BTCTX?</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Feature 1 -->
+                <div class="bg-btc-dark border border-btc-border rounded-xl p-6">
+                    <div class="text-btc-orange text-3xl mb-4">🔒</div>
+                    <h3 class="text-xl font-semibold mb-2">Privacy First</h3>
+                    <p class="text-gray-400">Runs 100% locally. No cloud. No accounts. No tracking. Your financial data stays on your machine.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-btc-dark border border-btc-border rounded-xl p-6">
+                    <div class="text-btc-orange text-3xl mb-4">📋</div>
+                    <h3 class="text-xl font-semibold mb-2">IRS Compliant</h3>
+                    <p class="text-gray-400">Generate Form 8949 and Schedule D reports. FIFO cost basis calculation built-in.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-btc-dark border border-btc-border rounded-xl p-6">
+                    <div class="text-btc-orange text-3xl mb-4">🆓</div>
+                    <h3 class="text-xl font-semibold mb-2">Free Forever</h3>
+                    <p class="text-gray-400">100% free and open-source. No subscriptions, no premium tiers, no hidden fees.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-btc-dark border border-btc-border rounded-xl p-6">
+                    <div class="text-btc-orange text-3xl mb-4">₿</div>
+                    <h3 class="text-xl font-semibold mb-2">Bitcoin Only</h3>
+                    <p class="text-gray-400">Purpose-built for Bitcoin. No altcoin bloat. Focused and simple.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshot Section -->
+    <section class="max-w-6xl mx-auto px-6 py-20">
+        <h2 class="text-3xl font-bold text-center mb-12">See It In Action</h2>
+
+        <!-- Main Dashboard Screenshot -->
+        <div class="bg-btc-gray border border-btc-border rounded-xl p-4 max-w-5xl mx-auto mb-12">
+            <img src="BTCTX.png" alt="BTCTX Dashboard - Portfolio Overview" class="rounded-lg w-full">
+        </div>
+
+        <!-- Feature Screenshots Grid -->
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="bg-btc-gray border border-btc-border rounded-xl p-3">
+                <img src="BTCTX2.png" alt="BTCTX Transactions" class="rounded-lg w-full mb-3">
+                <p class="text-center text-sm text-gray-400">Track all your transactions</p>
+            </div>
+            <div class="bg-btc-gray border border-btc-border rounded-xl p-3">
+                <img src="BTCTX3.png" alt="BTCTX Tax Reports" class="rounded-lg w-full mb-3">
+                <p class="text-center text-sm text-gray-400">Generate IRS tax reports</p>
+            </div>
+            <div class="bg-btc-gray border border-btc-border rounded-xl p-3">
+                <img src="BTCTX4.png" alt="BTCTX Settings" class="rounded-lg w-full mb-3">
+                <p class="text-center text-sm text-gray-400">Import CSV & manage data</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="bg-btc-gray border-y border-btc-border">
+        <div class="max-w-6xl mx-auto px-6 py-20">
+            <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-btc-orange text-black rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
+                    <h3 class="text-xl font-semibold mb-2">Download & Install</h3>
+                    <p class="text-gray-400">Get BTCTX for your platform. Docker, Mac, or Windows. Takes 2 minutes.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-btc-orange text-black rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
+                    <h3 class="text-xl font-semibold mb-2">Add Transactions</h3>
+                    <p class="text-gray-400">Enter your buys, sells, deposits, and withdrawals. Full control over your data.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-btc-orange text-black rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
+                    <h3 class="text-xl font-semibold mb-2">Generate Reports</h3>
+                    <p class="text-gray-400">Export IRS-compliant Form 8949 and Schedule D. Ready for tax filing.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section id="donate" class="max-w-6xl mx-auto px-6 py-20 text-center">
+        <h2 class="text-3xl font-bold mb-4">Support the Project</h2>
+        <p class="text-xl text-gray-400 max-w-xl mx-auto mb-8">
+            BTCTX is free and always will be. If it saves you time or money, consider supporting development with a donation.
+        </p>
+        <p class="text-gray-500 mb-8 italic">"Value for value — pay what it's worth to you."</p>
+
+        <!-- BTCPay Button Placeholder -->
+        <div class="inline-block bg-btc-gray border border-btc-border rounded-xl p-8">
+            <!--
+                ==========================================
+                BTCPAY SERVER BUTTON - REPLACE THIS BLOCK
+                ==========================================
+
+                To add your BTCPay button:
+                1. Go to your BTCPay Server on StartOS
+                2. Create a store called "BTCTX Donations"
+                3. Go to Plugins > Pay Button
+                4. Configure the button style
+                5. Copy the generated HTML and replace this placeholder
+
+            -->
+            <div class="text-gray-400">
+                <p class="text-btc-orange text-4xl mb-4">₿</p>
+                <p class="font-semibold mb-2">Bitcoin Donations Coming Soon</p>
+                <p class="text-sm">BTCPay Server integration pending</p>
+            </div>
+            <!-- END BTCPAY PLACEHOLDER -->
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="bg-btc-gray border-y border-btc-border">
+        <div class="max-w-6xl mx-auto px-6 py-20">
+            <h2 class="text-3xl font-bold text-center mb-12">Stop Paying for Cloud Tax Software</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full max-w-3xl mx-auto text-left">
+                    <thead>
+                        <tr class="border-b border-btc-border">
+                            <th class="py-4 px-4">Service</th>
+                            <th class="py-4 px-4">Model</th>
+                            <th class="py-4 px-4">Price</th>
+                            <th class="py-4 px-4">Privacy</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-400">
+                        <tr class="border-b border-btc-border">
+                            <td class="py-4 px-4">Koinly</td>
+                            <td class="py-4 px-4">SaaS</td>
+                            <td class="py-4 px-4">$49-279/yr</td>
+                            <td class="py-4 px-4 text-red-400">Cloud</td>
+                        </tr>
+                        <tr class="border-b border-btc-border">
+                            <td class="py-4 px-4">CoinTracker</td>
+                            <td class="py-4 px-4">SaaS</td>
+                            <td class="py-4 px-4">$59-199/yr</td>
+                            <td class="py-4 px-4 text-red-400">Cloud</td>
+                        </tr>
+                        <tr class="border-b border-btc-border">
+                            <td class="py-4 px-4">Bitcoin.tax</td>
+                            <td class="py-4 px-4">SaaS</td>
+                            <td class="py-4 px-4">$39-199/yr</td>
+                            <td class="py-4 px-4 text-red-400">Cloud</td>
+                        </tr>
+                        <tr class="bg-btc-dark">
+                            <td class="py-4 px-4 font-semibold text-white">BTCTX</td>
+                            <td class="py-4 px-4 text-btc-orange">Free/OSS</td>
+                            <td class="py-4 px-4 text-btc-orange">$0</td>
+                            <td class="py-4 px-4 text-green-400">Local</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-btc-border">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <img src="icon-64.png" alt="BTCTX Logo" class="w-8 h-8 rounded-full">
+                    <span class="font-semibold">BTCTX</span>
+                    <span class="text-gray-500">— Free Bitcoin Tax Software</span>
+                </div>
+                <div class="flex items-center gap-6 text-gray-400">
+                    <a href="https://github.com/PlebRick/BTCTX" target="_blank" class="hover:text-white transition">GitHub</a>
+                    <a href="https://github.com/PlebRick/BTCTX/blob/main/LICENSE" target="_blank" class="hover:text-white transition">MIT License</a>
+                    <span>Made with ₿ love</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
